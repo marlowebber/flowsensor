@@ -3,8 +3,32 @@
 #include <SPI.h>
 #include <SFM4X00.h>
 
-Adafruit_ST7735 tft = Adafruit_ST7735(     8,      A3,      A2,       A1,      9);
+/*
 
+connection map:
+using sensirion SFM4200-MGE, arduino uno R3 'kuman', altronics/duinotech ST7735 1.44" 128x128 TFT screen.
+
+tft screen  -> arduino
+	VCC -> 5V
+	GND -> GND
+	LED -> A0
+	CLK -> A1
+	SDI -> A2
+	RS  -> A3
+	RST -> A4
+	CS  -> A5
+	
+
+flow sensor -> arduino
+	the flow sensor is plugged into a module which contains the pull up resistors.
+	sda and scl are pulled up to 5V using 10k ohm resistors.
+	gnd  -> GND
+	vcc  -> 10 . pin 10 is high and this is used to power the flow sensor.
+	clk  -> A5 OR package pin 28 near reset button.
+	sda  -> A4 OR package pin 27.	
+*/
+
+Adafruit_ST7735 tft = Adafruit_ST7735(     8,      A3,      A2,       A1,      9);
 
 // char array to print to the screen
 char sensorPrintout[12];
