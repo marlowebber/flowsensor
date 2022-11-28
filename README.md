@@ -10,8 +10,8 @@ tft screen  -> arduino
 	CLK -> A1   
 	SDI -> A2   
 	RS  -> A3   
-	RST -> A4   
-	CS  -> A5   
+	RST -> 9   
+	CS  -> 8
 	      
 flow sensor -> arduino   
 	the flow sensor is plugged into a module which contains the pull up resistors.   
